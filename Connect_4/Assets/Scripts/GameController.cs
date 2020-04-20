@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    //Images
     public Image ObjectwitchImage;
     public Image ObjectwitchImage00;
     public Image ObjectwitchImage10;
@@ -54,25 +55,27 @@ public class GameController : MonoBehaviour
     public Image ObjectwitchImage36;
     public Image ObjectwitchImage46;
     public Image ObjectwitchImage56;
-
+    //Show the user turn
     public Image ObjectwitchImageTurn;
     public Image ObjectwitchImageTurn1;
-
+    
     public Sprite image50;
     public Sprite image40;
-
+    //Proper images
     public Sprite colorRed;
     public Sprite colorBlue;
     public Sprite colorWhite;
 
 
-    public GameObject menuPanel;
-    public GameObject gameOverPanel;
-    public Text gameOverText;
-    
+    public GameObject menuPanel;//Menu Panel
+    public GameObject gameOverPanel;// Game over Panel
+    public Text gameOverText;//Show how wins
+    //Matrix to 6 by 7 
     int[,] x = new int[6, 7];
     Random rand = new Random();
-   
+    //Every s{1..7} is the columun of the table, every time the gamer press the button 
+    //and the proper s{1..7} will decrease, if the value of s{1..7} is below to 0 the correspond
+    // button will be unavailable 
     int s1 = 5;
     int s2 = 5;
     int s3 = 5;
@@ -80,9 +83,9 @@ public class GameController : MonoBehaviour
     int s5 = 5;
     int s6 = 5;
     int s7 = 5;
-    int player;
-    int color;
-
+    int player;//identify the player
+    int color;//show the color of the player
+    //coditions insde the matrix
     bool res1;
     bool res2;
     bool res3;
@@ -95,9 +98,9 @@ public class GameController : MonoBehaviour
     bool res10;
     bool res11;
     bool res12;
-
+    //This is used for cheking if there's a draw
     int times = 0;
-    
+    //the buttons
     public Button btnn1;
     public Button btnn2;
     public Button btnn3;
@@ -105,10 +108,11 @@ public class GameController : MonoBehaviour
     public Button btnn5;
     public Button btnn6;
     public Button btnn7;
-
+    //how is going to start first
     public Button start1;
     public Button start2;
-
+    //At the beggining of the game the players will need to select how will start the game.
+    //start1 and start2 are the proper buttons to select
     void Awake()
     {
         gameOverPanel.SetActive(false);
@@ -118,13 +122,13 @@ public class GameController : MonoBehaviour
         ObjectwitchImageTurn.sprite = colorRed;
         ObjectwitchImageTurn1.sprite = colorBlue;
     }
-    
+    //function that will determinate the winner or draw.
     private void get_winner()
     {
-        //Console.WriteLine("last player " + player);
+        
         if (player == 2)
         {
-            // Console.WriteLine("last player 1");
+            
             if (compare_h1() == true || compare_h2() == true || compare_h3() == true || compare_h4() == true || compare_v1() == true || compare_v2() == true || compare_v3() == true || compare_D1() == true || compare_D2() == true || compare_D3() == true || compare_D4() == true || compare_D5() == true || compare_D6() == true)
             {
                 gameOverPanel.SetActive(true);
@@ -137,13 +141,9 @@ public class GameController : MonoBehaviour
             {
                 gameOverPanel.SetActive(true);
                 gameOverText.text = "Player 2 won!!";
-                /* Console.WriteLine("player 2 won");
-                 MessageBox.Show("Player 2 won");
-                 Menu m = new Menu();
-                 m.Show();*/
-                //  this.Hide();
+                
             }
-            // Console.WriteLine("last player 2");
+         
 
         }
         if (times > 41)
@@ -154,6 +154,7 @@ public class GameController : MonoBehaviour
         }
 
     }
+    //function that will determinate the changes turn of players and images
     private int delta()
     {
         if (player == 1)
@@ -177,7 +178,7 @@ public class GameController : MonoBehaviour
         return color;
     }
 
-
+    //Operations in the matrix with the buttons pressed by the players
     public void btn1()
     {
         // GetComponent<Image>().sprite = image50;
@@ -185,41 +186,41 @@ public class GameController : MonoBehaviour
         int aux = delta();
         if (aux == 1)//gamer 1
         {
-           // Console.WriteLine("Color Red out");
+          
             if (s1 == 5)
             {
                 ObjectwitchImage50.sprite = colorRed;
-              //  lbl_section_150.Image = Properties.Resources.rsz_p2_red;
+              
                 x[5, 0] = 1;
             }
             if (s1 == 4)
             {
                 ObjectwitchImage40.sprite = colorRed;
-                // lbl_section_140.Image = Properties.Resources.rsz_p2_red;
+                
                 x[4, 0] = 1;
             }
             if (s1 == 3)
             {
                 ObjectwitchImage30.sprite = colorRed;
-                //lbl_section_130.Image = Properties.Resources.rsz_p2_red;
+                
                 x[3, 0] = 1;
             }
             if (s1 == 2)
             {
                 ObjectwitchImage20.sprite = colorRed;
-                //lbl_section_120.Image = Properties.Resources.rsz_p2_red;
+                
                 x[2, 0] = 1;
             }
             if (s1 == 1)
             {
                 ObjectwitchImage10.sprite = colorRed;
-                //   lbl_section_110.Image = Properties.Resources.rsz_p2_red;
+                
                 x[1, 0] = 1;
             }
             if (s1 == 0)
             {
                 ObjectwitchImage00.sprite = colorRed;
-                //  lbl_section_100.Image = Properties.Resources.rsz_p2_red;
+                
                 x[0, 0] = 1;
             }
         }
@@ -228,44 +229,44 @@ public class GameController : MonoBehaviour
             if (s1 == 5)
             {
                 ObjectwitchImage50.sprite = colorRed;
-                //  lbl_section_150.Image = Properties.Resources.rsz_p1_blue;
+                
                 x[5, 0] = 2;
             }
             if (s1 == 4)
             {
                 ObjectwitchImage40.sprite = colorBlue;
-                //  lbl_section_140.Image = Properties.Resources.rsz_p1_blue;
+            
                 x[4, 0] = 2;
             }
             if (s1 == 3)
             {
                 ObjectwitchImage30.sprite = colorBlue;
-                //  lbl_section_130.Image = Properties.Resources.rsz_p1_blue;
+             
                 x[3, 0] = 2;
             }
             if (s1 == 2)
             {
                 ObjectwitchImage20.sprite = colorBlue;
-                //  lbl_section_120.Image = Properties.Resources.rsz_p1_blue;
+             
                 x[2, 0] = 2;
             }
             if (s1 == 1)
             {
                 ObjectwitchImage10.sprite = colorBlue;
-                //   lbl_section_110.Image = Properties.Resources.rsz_p1_blue;
+            
                 x[1, 0] = 2;
             }
             if (s1 == 0)
             {
                 ObjectwitchImage00.sprite = colorBlue;
-                //  lbl_section_100.Image = Properties.Resources.rsz_p1_blue;
+         
                 x[0, 0] = 2;
             }
-         //   Console.WriteLine("Color Blue out");
+       
         }
 
         s1 -= 1;
-        //print();
+    
         compare_h1();
         compare_h2();
         compare_h3();
@@ -887,6 +888,7 @@ public class GameController : MonoBehaviour
         enableButtons();
     }
     /**************************************************************************************/
+    //fuctions to determinate, how will start the game. and then it will start
     public void setStartingSide(string start)
     {
         if (start=="1")
@@ -901,6 +903,9 @@ public class GameController : MonoBehaviour
         }
         startGame();
     }
+    /*When the game starts the menuPanel keeps unable and the buttons available for the players 
+     * start1 and start2 is the selected player
+     */
     void startGame()
     {
         menuPanel.SetActive(false);
@@ -915,6 +920,7 @@ public class GameController : MonoBehaviour
         start2.interactable = false;
         
     }
+    //enable butttons if the s{1..7} becomes lower than 0
     public void enableButtons()
     {
         if (s1 < 0)
@@ -946,7 +952,7 @@ public class GameController : MonoBehaviour
             btnn7.interactable = false;
         }
     }
-    /***************************************************************************************/
+    /**************************Comparacions horitonzal*************************************************************/
     private bool compare_h1()
     {
 
@@ -1028,7 +1034,7 @@ public class GameController : MonoBehaviour
         }
         return res4;
     }
-    /**************************************************************************************/
+    /**************************Comparacions vertical************************************************************/
     private bool compare_v1()
     {
         for (int i = 0; i <= 6; i++)
@@ -1090,7 +1096,7 @@ public class GameController : MonoBehaviour
         }
         return res7;
     }
-    /*****************************************************************************************/
+    /***************************Comparacions diagonal**************************************************************/
     private bool compare_D1()
     {
         /*
