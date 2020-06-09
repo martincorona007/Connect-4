@@ -69,6 +69,7 @@ public class GameController : MonoBehaviour
 
     public GameObject menuPanel;//Menu Panel
     public GameObject gameOverPanel;// Game over Panel
+    public GameObject restarButton;
     public Text gameOverText;//Show how wins
     //Matrix to 6 by 7 
     int[,] x = new int[6, 7];
@@ -121,6 +122,7 @@ public class GameController : MonoBehaviour
         start2.interactable = true;
         ObjectwitchImageTurn.sprite = colorRed;
         ObjectwitchImageTurn1.sprite = colorBlue;
+        restarButton.SetActive(false);
     }
     //function that will determinate the winner or draw.
     private void get_winner()
@@ -133,6 +135,8 @@ public class GameController : MonoBehaviour
             {
                 gameOverPanel.SetActive(true);
                 gameOverText.text = "Player 1 won!!";
+                restarButton.SetActive(true);
+                endGame();
             }
         }
         else if (player == 1)
@@ -141,7 +145,8 @@ public class GameController : MonoBehaviour
             {
                 gameOverPanel.SetActive(true);
                 gameOverText.text = "Player 2 won!!";
-                
+                restarButton.SetActive(true);
+                endGame();
             }
          
 
@@ -150,6 +155,7 @@ public class GameController : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             gameOverText.text = "It's a draw!!";
+            restarButton.SetActive(true);
 
         }
 
@@ -919,6 +925,150 @@ public class GameController : MonoBehaviour
         start1.interactable = false;
         start2.interactable = false;
         
+    }
+    void endGame()
+    {
+        btnn1.interactable = false;
+        btnn2.interactable = false;
+        btnn3.interactable = false;
+        btnn4.interactable = false;
+        btnn5.interactable = false;
+        btnn6.interactable = false;
+        btnn7.interactable = false;
+    }
+    public void restarGame()
+    {
+        times = 0;
+        
+        player = 0;
+        color = 0;
+        times = 0;
+        s1 = 5;
+        s2 = 5;
+        s3 = 5;
+        s4 = 5;
+        s5 = 5;
+        s6 = 5;
+        s7 = 5;
+        res1 = false;
+        res2 = false;
+        res3 = false;
+        res4 = false;
+        res5 = false;
+        res6 = false;
+        res7 = false;
+        res8 = false;
+        res9 = false;
+        res10 = false;
+        res11 = false;
+        res12 = false;
+        endGame();
+        gameOverPanel.SetActive(false);
+        ObjectwitchImageTurn.sprite = colorRed;
+        ObjectwitchImageTurn1.sprite = colorBlue;
+        enableButtons();
+        start1.interactable = true;
+        start2.interactable = true;
+        ObjectwitchImage00.sprite = colorWhite;
+        ObjectwitchImage10.sprite = colorWhite;
+        ObjectwitchImage20.sprite = colorWhite;
+        ObjectwitchImage30.sprite = colorWhite;
+        ObjectwitchImage40.sprite = colorWhite;
+        ObjectwitchImage50.sprite = colorWhite;
+
+        ObjectwitchImage01.sprite = colorWhite;
+        ObjectwitchImage11.sprite = colorWhite;
+        ObjectwitchImage21.sprite = colorWhite;
+        ObjectwitchImage31.sprite = colorWhite;
+        ObjectwitchImage41.sprite = colorWhite;
+        ObjectwitchImage51.sprite = colorWhite;
+
+        ObjectwitchImage02.sprite = colorWhite;
+        ObjectwitchImage12.sprite = colorWhite;
+        ObjectwitchImage22.sprite = colorWhite;
+        ObjectwitchImage32.sprite = colorWhite;
+        ObjectwitchImage42.sprite = colorWhite;
+        ObjectwitchImage52.sprite = colorWhite;
+
+        ObjectwitchImage03.sprite = colorWhite;
+        ObjectwitchImage13.sprite = colorWhite;
+        ObjectwitchImage23.sprite = colorWhite;
+        ObjectwitchImage33.sprite = colorWhite;
+        ObjectwitchImage43.sprite = colorWhite;
+        ObjectwitchImage53.sprite = colorWhite;
+
+        ObjectwitchImage04.sprite = colorWhite;
+        ObjectwitchImage14.sprite = colorWhite;
+        ObjectwitchImage24.sprite = colorWhite;
+        ObjectwitchImage34.sprite = colorWhite;
+        ObjectwitchImage44.sprite = colorWhite;
+        ObjectwitchImage54.sprite = colorWhite;
+
+        ObjectwitchImage05.sprite = colorWhite;
+        ObjectwitchImage15.sprite = colorWhite;
+        ObjectwitchImage25.sprite = colorWhite;
+        ObjectwitchImage35.sprite = colorWhite;
+        ObjectwitchImage45.sprite = colorWhite;
+        ObjectwitchImage55.sprite = colorWhite;
+
+        ObjectwitchImage06.sprite = colorWhite;
+        ObjectwitchImage16.sprite = colorWhite;
+        ObjectwitchImage26.sprite = colorWhite;
+        ObjectwitchImage36.sprite = colorWhite;
+        ObjectwitchImage46.sprite = colorWhite;
+        ObjectwitchImage56.sprite = colorWhite;
+        //c1
+        x[0, 0] = 60;
+        x[1, 0] = 20;
+        x[2, 0] = 30;
+        x[3, 0] = 10;
+        x[4, 0] = 50;
+        x[5, 0] = 40;
+        //c2
+        x[0, 1] = 10;
+        x[1, 1] = 40;
+        x[2, 1] = 50;
+        x[3, 1] = 20;
+        x[4, 1] = 30;
+        x[5, 1] = 60;
+        //c3
+        x[0, 2] = 50;
+        x[1, 2] = 60;
+        x[2, 2] = 30;
+        x[3, 2] = 40;
+        x[4, 2] = 10;
+        x[5, 2] = 20;
+        //c4
+        x[0, 3] = 30;
+        x[1, 3] = 20;
+        x[2, 3] = 10;
+        x[3, 3] = 50;
+        x[4, 3] = 60;
+        x[5, 3] = 40;
+        //c5
+        x[0, 4] = 50;
+        x[1, 4] = 60;
+        x[2, 4] = 40;
+        x[3, 4] = 30;
+        x[4, 4] = 20;
+        x[5, 4] = 10;
+        //c6
+        x[0, 5] = 40;
+        x[1, 5] = 10;
+        x[2, 5] = 20;
+        x[3, 5] = 50;
+        x[4, 5] = 60;
+        x[5, 5] = 30;
+        //c7
+        x[0, 6] = 60;
+        x[1, 6] = 50;
+        x[2, 6] = 40;
+        x[3, 6] = 30;
+        x[4, 6] = 20;
+        x[5, 6] = 10;
+
+        restarButton.SetActive(false);
+
     }
     //enable butttons if the s{1..7} becomes lower than 0
     public void enableButtons()
