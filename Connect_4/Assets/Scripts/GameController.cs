@@ -967,6 +967,7 @@ public class GameController : MonoBehaviour
         ObjectwitchImageTurn.sprite = colorRed;
         ObjectwitchImageTurn1.sprite = colorBlue;
         enableButtons();
+        menuPanel.SetActive(true);
         start1.interactable = true;
         start2.interactable = true;
         ObjectwitchImage00.sprite = colorWhite;
