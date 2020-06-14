@@ -65,8 +65,7 @@ public class GameController : MonoBehaviour
     public Sprite colorRed;
     public Sprite colorBlue;
     public Sprite colorWhite;
-
-
+ 
     public GameObject menuPanel;//Menu Panel
     public GameObject gameOverPanel;// Game over Panel
     public GameObject restarButton;
@@ -123,6 +122,7 @@ public class GameController : MonoBehaviour
         ObjectwitchImageTurn.sprite = colorRed;
         ObjectwitchImageTurn1.sprite = colorBlue;
         restarButton.SetActive(false);
+  
     }
     //function that will determinate the winner or draw.
     private void get_winner()
@@ -137,6 +137,7 @@ public class GameController : MonoBehaviour
                 gameOverText.text = "Player 1 won!!";
                 restarButton.SetActive(true);
                 endGame();
+                GameSoundManager.PlaySound3();
             }
         }
         else if (player == 1)
@@ -147,16 +148,18 @@ public class GameController : MonoBehaviour
                 gameOverText.text = "Player 2 won!!";
                 restarButton.SetActive(true);
                 endGame();
+                GameSoundManager.PlaySound3();
             }
          
 
         }
         if (times > 41)
         {
+            GameSoundManager.StopSound1();
             gameOverPanel.SetActive(true);
             gameOverText.text = "It's a draw!!";
             restarButton.SetActive(true);
-
+            GameSoundManager.PlaySound3();
         }
 
     }
@@ -196,35 +199,36 @@ public class GameController : MonoBehaviour
             if (s1 == 5)
             {
                 ObjectwitchImage50.sprite = colorRed;
-              
+                GameSoundManager.PlaySound2();
                 x[5, 0] = 1;
             }
             if (s1 == 4)
             {
                 ObjectwitchImage40.sprite = colorRed;
-                
+                GameSoundManager.PlaySound2();
                 x[4, 0] = 1;
             }
             if (s1 == 3)
             {
                 ObjectwitchImage30.sprite = colorRed;
-                
+                GameSoundManager.PlaySound2();
                 x[3, 0] = 1;
             }
             if (s1 == 2)
             {
                 ObjectwitchImage20.sprite = colorRed;
-                
+                GameSoundManager.PlaySound2();
                 x[2, 0] = 1;
             }
             if (s1 == 1)
             {
                 ObjectwitchImage10.sprite = colorRed;
-                
+                GameSoundManager.PlaySound2();
                 x[1, 0] = 1;
             }
             if (s1 == 0)
             {
+                GameSoundManager.PlaySound2();
                 ObjectwitchImage00.sprite = colorRed;
                 
                 x[0, 0] = 1;
@@ -235,37 +239,37 @@ public class GameController : MonoBehaviour
             if (s1 == 5)
             {
                 ObjectwitchImage50.sprite = colorRed;
-                
+                GameSoundManager.PlaySound2();
                 x[5, 0] = 2;
             }
             if (s1 == 4)
             {
                 ObjectwitchImage40.sprite = colorBlue;
-            
+                GameSoundManager.PlaySound2();
                 x[4, 0] = 2;
             }
             if (s1 == 3)
             {
                 ObjectwitchImage30.sprite = colorBlue;
-             
+                GameSoundManager.PlaySound2();
                 x[3, 0] = 2;
             }
             if (s1 == 2)
             {
                 ObjectwitchImage20.sprite = colorBlue;
-             
+                GameSoundManager.PlaySound2();
                 x[2, 0] = 2;
             }
             if (s1 == 1)
             {
                 ObjectwitchImage10.sprite = colorBlue;
-            
+                GameSoundManager.PlaySound2();
                 x[1, 0] = 2;
             }
             if (s1 == 0)
             {
                 ObjectwitchImage00.sprite = colorBlue;
-         
+                GameSoundManager.PlaySound2();
                 x[0, 0] = 2;
             }
        
@@ -301,36 +305,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage51.sprite = colorRed;
                 //    lbl_section_251.Image = Properties.Resources.rsz_p2_red;
                 x[5, 1] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 4)
             {
                 ObjectwitchImage41.sprite = colorRed;
                 //  lbl_section_241.Image = Properties.Resources.rsz_p2_red;
                 x[4, 1] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 3)
             {
                 ObjectwitchImage31.sprite = colorRed;
                 //lbl_section_231.Image = Properties.Resources.rsz_p2_red;
                 x[3, 1] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 2)
             {
                 ObjectwitchImage21.sprite = colorRed;
                 //lbl_section_221.Image = Properties.Resources.rsz_p2_red;
                 x[2, 1] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 1)
             {
                 ObjectwitchImage11.sprite = colorRed;
                 //lbl_section_211.Image = Properties.Resources.rsz_p2_red;
                 x[1, 1] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 0)
             {
                 ObjectwitchImage01.sprite = colorRed;
                 //lbl_section_201.Image = Properties.Resources.rsz_p2_red;
                 x[0, 1] = 1;
+                GameSoundManager.PlaySound2();
             }
         }
         else if (aux == 2)
@@ -341,36 +351,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage51.sprite = colorBlue;
                 //  lbl_section_251.Image = Properties.Resources.rsz_p1_blue;
                 x[5, 1] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 4)
             {
                 ObjectwitchImage41.sprite = colorBlue;
                 //lbl_section_241.Image = Properties.Resources.rsz_p1_blue;
                 x[4, 1] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 3)
             {
                 ObjectwitchImage31.sprite = colorBlue;
                 //lbl_section_231.Image = Properties.Resources.rsz_p1_blue;
                 x[3, 1] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 2)
             {
                 ObjectwitchImage21.sprite = colorBlue;
                 //lbl_section_221.Image = Properties.Resources.rsz_p1_blue;
                 x[2, 1] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 1)
             {
                 ObjectwitchImage11.sprite = colorBlue;
                 //lbl_section_211.Image = Properties.Resources.rsz_p1_blue;
                 x[1, 1] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s2 == 0)
             {
                 ObjectwitchImage01.sprite = colorBlue;
                 //lbl_section_201.Image = Properties.Resources.rsz_p1_blue;
                 x[0, 1] = 2;
+                GameSoundManager.PlaySound2();
             }
         }
 
@@ -402,36 +418,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage52.sprite = colorRed;
                 //lbl_section_352.Image = Properties.Resources.rsz_p2_red;
                 x[5, 2] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 4)
             {
                 ObjectwitchImage42.sprite = colorRed;
                 //lbl_section_342.Image = Properties.Resources.rsz_p2_red;
                 x[4, 2] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 3)
             {
                 ObjectwitchImage32.sprite = colorRed;
                 //lbl_section_332.Image = Properties.Resources.rsz_p2_red;
                 x[3, 2] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 2)
             {
                 ObjectwitchImage22.sprite = colorRed;
                 //lbl_section_322.Image = Properties.Resources.rsz_p2_red;
                 x[2, 2] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 1)
             {
                 ObjectwitchImage12.sprite = colorRed;
                 //lbl_section_312.Image = Properties.Resources.rsz_p2_red;
                 x[1, 2] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 0)
             {
                 ObjectwitchImage02.sprite = colorRed;
                 //lbl_section_302.Image = Properties.Resources.rsz_p2_red;
                 x[0, 2] = 1;
+                GameSoundManager.PlaySound2();
             }
         }
         else if (aux == 2)
@@ -441,36 +463,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage52.sprite = colorBlue;
                 //lbl_section_352.Image = Properties.Resources.rsz_p1_blue;
                 x[5, 2] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 4)
             {
                 ObjectwitchImage42.sprite = colorBlue;
                 //lbl_section_342.Image = Properties.Resources.rsz_p1_blue;
                 x[4, 2] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 3)
             {
                 ObjectwitchImage32.sprite = colorBlue;
                 //lbl_section_332.Image = Properties.Resources.rsz_p1_blue;
                 x[3, 2] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 2)
             {
                 ObjectwitchImage22.sprite = colorBlue;
                 //lbl_section_322.Image = Properties.Resources.rsz_p1_blue;
                 x[2, 2] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 1)
             {
                 ObjectwitchImage12.sprite = colorBlue;
                 //lbl_section_312.Image = Properties.Resources.rsz_p1_blue;
                 x[1, 2] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s3 == 0)
             {
                 ObjectwitchImage02.sprite = colorBlue;
                 //lbl_section_302.Image = Properties.Resources.rsz_p1_blue;
                 x[0, 2] = 2;
+                GameSoundManager.PlaySound2();
             }
         }
 
@@ -502,36 +530,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage53.sprite = colorRed;
                 //lbl_section_453.Image = Properties.Resources.rsz_p2_red;
                 x[5, 3] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 4)
             {
                 ObjectwitchImage43.sprite = colorRed;
                 //    lbl_section_443.Image = Properties.Resources.rsz_p2_red;
                 x[4, 3] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 3)
             {
                 ObjectwitchImage33.sprite = colorRed;
                 //  lbl_section_433.Image = Properties.Resources.rsz_p2_red;
                 x[3, 3] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 2)
             {
                 ObjectwitchImage23.sprite = colorRed;
                 //lbl_section_423.Image = Properties.Resources.rsz_p2_red;
                 x[2, 3] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 1)
             {
                 ObjectwitchImage13.sprite = colorRed;
                 //  lbl_section_413.Image = Properties.Resources.rsz_p2_red;
                 x[1, 3] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 0)
             {
                 ObjectwitchImage03.sprite = colorRed;
                 //lbl_section_403.Image = Properties.Resources.rsz_p2_red;
                 x[0, 3] = 1;
+                GameSoundManager.PlaySound2();
             }
 
         }
@@ -542,36 +576,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage53.sprite = colorBlue;
                 //lbl_section_453.Image = Properties.Resources.rsz_p1_blue;
                 x[5, 3] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 4)
             {
                 ObjectwitchImage43.sprite = colorBlue;
                 //lbl_section_443.Image = Properties.Resources.rsz_p1_blue;
                 x[4, 3] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 3)
             {
                 ObjectwitchImage33.sprite = colorBlue;
                 // lbl_section_433.Image = Properties.Resources.rsz_p1_blue;
                 x[3, 3] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 2)
             {
                 ObjectwitchImage23.sprite = colorBlue;
                 //lbl_section_423.Image = Properties.Resources.rsz_p1_blue;
                 x[2, 3] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 1)
             {
                 ObjectwitchImage13.sprite = colorBlue;
                 //lbl_section_413.Image = Properties.Resources.rsz_p1_blue;
                 x[1, 3] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s4 == 0)
             {
                 ObjectwitchImage03.sprite = colorBlue;
                 // lbl_section_403.Image = Properties.Resources.rsz_p1_blue;
                 x[0, 3] = 2;
+                GameSoundManager.PlaySound2();
             }
         }
 
@@ -604,36 +644,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage54.sprite = colorRed;
                 //    lbl_section_554.Image = Properties.Resources.rsz_p2_red;
                 x[5, 4] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 4)
             {
                 ObjectwitchImage44.sprite = colorRed;
                 //  lbl_section_544.Image = Properties.Resources.rsz_p2_red;
                 x[4, 4] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 3)
             {
                 ObjectwitchImage34.sprite = colorRed;
                 //  lbl_section_534.Image = Properties.Resources.rsz_p2_red;
                 x[3, 4] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 2)
             {
                 ObjectwitchImage24.sprite = colorRed;
                 //    lbl_section_524.Image = Properties.Resources.rsz_p2_red;
                 x[2, 4] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 1)
             {
                 ObjectwitchImage14.sprite = colorRed;
                 //   lbl_section_514.Image = Properties.Resources.rsz_p2_red;
                 x[1, 4] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 0)
             {
                 ObjectwitchImage04.sprite = colorRed;
                 //  lbl_section_504.Image = Properties.Resources.rsz_p2_red;
                 x[0, 4] = 1;
+                GameSoundManager.PlaySound2();
             }
         }
         else if (aux == 2)
@@ -643,36 +689,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage54.sprite = colorBlue;
                 //    lbl_section_554.Image = Properties.Resources.rsz_p1_blue;
                 x[5, 4] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 4)
             {
                 ObjectwitchImage44.sprite = colorBlue;
                 //    lbl_section_544.Image = Properties.Resources.rsz_p1_blue;
                 x[4, 4] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 3)
             {
                 ObjectwitchImage34.sprite = colorBlue;
                 //   lbl_section_534.Image = Properties.Resources.rsz_p1_blue;
                 x[3, 4] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 2)
             {
                 ObjectwitchImage24.sprite = colorBlue;
                 //   lbl_section_524.Image = Properties.Resources.rsz_p1_blue;
                 x[2, 4] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 1)
             {
                 ObjectwitchImage14.sprite = colorBlue;
                 //   lbl_section_514.Image = Properties.Resources.rsz_p1_blue;
                 x[1, 4] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s5 == 0)
             {
                 ObjectwitchImage04.sprite = colorBlue;
                 //    lbl_section_504.Image = Properties.Resources.rsz_p1_blue;
                 x[0, 4] = 2;
+                GameSoundManager.PlaySound2();
             }
         }
 
@@ -704,36 +756,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage55.sprite = colorRed;
                 //      lbl_section_655.Image = Properties.Resources.rsz_p2_red;
                 x[5, 5] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 4)
             {
                 ObjectwitchImage45.sprite = colorRed;
                 //        lbl_section_645.Image = Properties.Resources.rsz_p2_red;
                 x[4, 5] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 3)
             {
                 ObjectwitchImage35.sprite = colorRed;
                 //    lbl_section_635.Image = Properties.Resources.rsz_p2_red;
                 x[3, 5] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 2)
             {
                 ObjectwitchImage25.sprite = colorRed;
                 //       lbl_section_625.Image = Properties.Resources.rsz_p2_red;
                 x[2, 5] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 1)
             {
                 ObjectwitchImage15.sprite = colorRed;
                 //   lbl_section_615.Image = Properties.Resources.rsz_p2_red;
                 x[1, 5] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 0)
             {
                 ObjectwitchImage05.sprite = colorRed;
                 //      lbl_section_605.Image = Properties.Resources.rsz_p2_red;
                 x[0, 5] = 1;
+                GameSoundManager.PlaySound2();
             }
         }
         else if (aux == 2)
@@ -743,36 +801,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage55.sprite = colorBlue;
                 //   lbl_section_655.Image = Properties.Resources.rsz_p1_blue;
                 x[5, 5] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 4)
             {
                 ObjectwitchImage45.sprite = colorBlue;
                 //    lbl_section_645.Image = Properties.Resources.rsz_p1_blue;
                 x[4, 5] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 3)
             {
                 ObjectwitchImage35.sprite = colorBlue;
                 //   lbl_section_635.Image = Properties.Resources.rsz_p1_blue;
                 x[3, 5] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 2)
             {
                 ObjectwitchImage25.sprite = colorBlue;
                 //   lbl_section_625.Image = Properties.Resources.rsz_p1_blue;
                 x[2, 5] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 1)
             {
                 ObjectwitchImage15.sprite = colorBlue;
                 //  lbl_section_615.Image = Properties.Resources.rsz_p1_blue;
                 x[1, 5] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s6 == 0)
             {
                 ObjectwitchImage05.sprite = colorBlue;
                 //    lbl_section_605.Image = Properties.Resources.rsz_p1_blue;
                 x[0, 5] = 2;
+                GameSoundManager.PlaySound2();
             }
         }
 
@@ -804,36 +868,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage56.sprite = colorRed;
                 //     lbl_section_756.Image = Properties.Resources.rsz_p2_red;
                 x[5, 6] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 4)
             {
                 ObjectwitchImage46.sprite = colorRed;
                 //     lbl_section_746.Image = Properties.Resources.rsz_p2_red;
                 x[4, 6] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 3)
             {
                 ObjectwitchImage36.sprite = colorRed;
                 //    lbl_section_736.Image = Properties.Resources.rsz_p2_red;
                 x[3, 6] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 2)
             {
                 ObjectwitchImage26.sprite = colorRed;
                 //    lbl_section_726.Image = Properties.Resources.rsz_p2_red;
                 x[2, 6] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 1)
             {
                 ObjectwitchImage16.sprite = colorRed;
                 //    lbl_section_716.Image = Properties.Resources.rsz_p2_red;
                 x[1, 6] = 1;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 0)
             {
                 ObjectwitchImage06.sprite = colorRed;
                 //    lbl_section_706.Image = Properties.Resources.rsz_p2_red;
                 x[0, 6] = 1;
+                GameSoundManager.PlaySound2();
             }
         }
         else if (aux == 2)
@@ -843,36 +913,42 @@ public class GameController : MonoBehaviour
                 ObjectwitchImage56.sprite = colorBlue;
                 //   lbl_section_756.Image = Properties.Resources.rsz_p1_blue;
                 x[5, 6] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 4)
             {
                 ObjectwitchImage46.sprite = colorBlue;
                 //   lbl_section_746.Image = Properties.Resources.rsz_p1_blue;
                 x[4, 6] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 3)
             {
                 ObjectwitchImage36.sprite = colorBlue;
                 //   lbl_section_736.Image = Properties.Resources.rsz_p1_blue;
                 x[3, 6] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 2)
             {
                 ObjectwitchImage26.sprite = colorBlue;
                 //   lbl_section_726.Image = Properties.Resources.rsz_p1_blue;
                 x[2, 6] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 1)
             {
                 ObjectwitchImage16.sprite = colorBlue;
                 //    lbl_section_716.Image = Properties.Resources.rsz_p1_blue;
                 x[1, 6] = 2;
+                GameSoundManager.PlaySound2();
             }
             if (s7 == 0)
             {
                 ObjectwitchImage06.sprite = colorBlue;
                 //    lbl_section_706.Image = Properties.Resources.rsz_p1_blue;
                 x[0, 6] = 2;
+                GameSoundManager.PlaySound2();
             }
         }
         s7 -= 1;
@@ -924,7 +1000,9 @@ public class GameController : MonoBehaviour
         btnn7.interactable = true;
         start1.interactable = false;
         start2.interactable = false;
+        GameSoundManager.PlaySound1();
         
+
     }
     void endGame()
     {
@@ -935,6 +1013,8 @@ public class GameController : MonoBehaviour
         btnn5.interactable = false;
         btnn6.interactable = false;
         btnn7.interactable = false;
+        GameSoundManager.StopSound1();
+        
     }
     public void restarGame()
     {
